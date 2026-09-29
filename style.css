@@ -1,0 +1,910 @@
+/* ===== ESTILO GENERAL ===== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    color: #4a3f35;
+    background-image: url('IMG_2150 (2).JPG');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    line-height: 1.6;
+}
+
+/* ===== ENCABEZADO ===== */
+
+header {
+    background-color: rgba(248, 220, 229, 0.95);
+    text-align: center;
+    padding: 25px;
+    box-shadow: 0 3px 10px rgba(80, 50, 60, 0.2);
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    color: #8d5a68;
+    font-size: 32px;
+    margin-bottom: 5px;
+}
+
+header p {
+    color: #6d565b;
+}
+
+/* ===== BUSCADOR ===== */
+
+.buscador-contenedor {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.boton-buscar {
+    background-color: #d99aaa;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.boton-buscar:hover {
+    background-color: #b97889;
+    transform: scale(1.05);
+}
+
+.buscador {
+    display: none;
+    margin: 15px auto 0;
+    padding: 15px;
+    background-color: white;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 5px 15px rgba(80, 50, 60, 0.2);
+}
+
+.buscador.activo {
+    display: block;
+}
+
+.buscador input {
+    width: 70%;
+    padding: 10px;
+    border: 2px solid #e6b7c3;
+    border-radius: 15px;
+    outline: none;
+    font-family: inherit;
+}
+
+.buscador input:focus {
+    border-color: #c98596;
+}
+
+.buscador button {
+    background-color: #d99aaa;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.buscador button:hover {
+    background-color: #b97889;
+}
+
+.cerrar-busqueda {
+    background-color: #999 !important;
+    margin-left: 5px;
+}
+
+/* ================================================= */
+/* ===== MENÚ DE NAVEGACIÓN - BOTONES PASTEL ===== */
+/* ================================================= */
+
+nav.menu-principal {
+    width: 100%;
+    min-height: 60px;
+    background-color: transparent;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 8px;
+    padding: 12px 5px;
+    border-radius: 30px;
+}
+
+/* Botones del menú */
+
+nav.menu-principal a {
+    display: inline-block;
+
+    background-color: #f3c6d2;
+    color: #704b57;
+
+    text-decoration: none;
+
+    padding: 9px 15px;
+    border-radius: 20px;
+
+    border: 2px solid #e6b7c3;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    box-shadow: 0 3px 8px rgba(80, 50, 60, 0.12);
+
+    transition: 0.3s;
+}
+
+/* Efecto hover */
+
+nav.menu-principal a:hover {
+    background-color: #e9b3c2;
+    color: #704b57;
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 5px 12px rgba(80, 50, 60, 0.15);
+}
+
+/* ===== CONTENIDO PRINCIPAL ===== */
+
+main {
+    width: 90%;
+    max-width: 1000px;
+    margin: 45px auto;
+}
+
+/* ===== CAJAS DE LAS SECCIONES ===== */
+
+section {
+    width: 100%;
+    min-height: 120px;
+
+    padding: 35px;
+    margin-bottom: 35px;
+
+    border: 2px solid #e6b7c3;
+
+    position: relative;
+
+    background-color: rgba(255, 255, 255, 0.93);
+    border-radius: 20px;
+
+    box-shadow: 0 5px 15px rgba(80, 50, 60, 0.15);
+}
+
+/* Detalle decorativo */
+
+section::before {
+    content: "✿";
+    position: absolute;
+    top: 10px;
+    right: 18px;
+    color: #d99aaa;
+    font-size: 22px;
+}
+
+/* ===== TÍTULOS ===== */
+
+h2 {
+    color: #9b6170;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h3 {
+    color: #a66c7b;
+    margin-bottom: 10px;
+}
+
+h4 {
+    color: #b97889;
+    margin-bottom: 8px;
+}
+
+/* ===== BIENVENIDA ===== */
+
+#bienvenida {
+    text-align: center;
+}
+
+#bienvenida p {
+    margin-bottom: 15px;
+}
+
+.texto-destacado {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.texto-especial {
+    font-family: 'Georgia', serif;
+    color: #76545e;
+}
+
+/* Combinación de selectores */
+
+#bienvenida .texto-especial,
+#tipos .texto-especial {
+    font-size: 17px;
+    background-color: #fff5f7;
+    padding: 15px;
+    border-radius: 12px;
+}
+
+/* ===== CONTENIDO ===== */
+
+#contenido ul {
+    list-style: none;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+
+    gap: 15px;
+    margin-top: 20px;
+}
+
+#contenido li {
+    background-color: #f9e7ec;
+    padding: 15px;
+
+    border-radius: 15px;
+    text-align: center;
+
+    border: 1px solid #e6b7c3;
+
+    transition: 0.3s;
+}
+
+#contenido li:hover {
+    transform: translateY(-5px);
+    background-color: #f4d4de;
+}
+
+#contenido a {
+    color: #704b57;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* ===== TARJETAS DE MANICURA ===== */
+
+.tarjeta-manicura {
+    width: 100%;
+    padding: 25px;
+    margin: 20px 0;
+
+    border: 2px solid #efd0d9;
+
+    position: relative;
+
+    background-color: #fffafa;
+    border-radius: 18px;
+
+    box-shadow: 0 4px 12px rgba(80, 50, 60, 0.12);
+
+    transition: 0.3s;
+}
+
+.tarjeta-manicura:hover {
+    transform: translateY(-4px);
+
+    box-shadow: 0 7px 16px rgba(80, 50, 60, 0.18);
+}
+
+/* ===== TARJETAS NUEVAS ===== */
+
+.tarjeta-nueva {
+    width: 100%;
+    padding: 25px;
+    margin: 20px 0;
+
+    border: 2px solid #efd0d9;
+
+    position: relative;
+
+    background-color: #fffafa;
+    border-radius: 18px;
+
+    box-shadow: 0 4px 12px rgba(80, 50, 60, 0.12);
+
+    transition: 0.3s;
+}
+
+.tarjeta-nueva:hover {
+    transform: translateY(-4px);
+
+    box-shadow: 0 7px 16px rgba(80, 50, 60, 0.18);
+}
+
+/* ===== MODELO DE CAJA Y POSICIÓN ===== */
+
+.caja-semana5 {
+    width: 90%;
+    margin: 0 auto 35px;
+
+    padding: 35px;
+
+    border: 2px solid #e6b7c3;
+
+    box-sizing: border-box;
+
+    position: relative;
+}
+
+.tarjeta-manicura,
+.tarjeta-nueva {
+    position: relative;
+
+    padding: 20px;
+    margin: 20px 0;
+
+    border: 2px solid #efd0d9;
+
+    box-sizing: border-box;
+}
+
+/* ===== BOTONES DE TUTORIALES ===== */
+
+.tarjeta-manicura > a,
+.tarjeta-nueva > a {
+    display: inline-block;
+
+    background-color: #f4d4de;
+    color: #704b57;
+
+    text-decoration: none;
+
+    padding: 10px 18px;
+    margin: 6px 4px;
+
+    border: 2px solid #e6b7c3;
+    border-radius: 20px;
+
+    font-weight: bold;
+    text-align: center;
+
+    box-shadow: 0 3px 8px rgba(80, 50, 60, 0.12);
+
+    transition: 0.3s;
+}
+
+.tarjeta-manicura > a:hover,
+.tarjeta-nueva > a:hover {
+    background-color: #d99aaa;
+    color: white;
+
+    transform: translateY(-3px);
+}
+
+/* ===== VIDEOS Y TUTORIALES ===== */
+
+.contenedor-videos {
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.contenedor-videos a {
+    display: inline-block;
+
+    background-color: #f4d4de;
+    color: #704b57;
+
+    text-decoration: none;
+
+    padding: 12px 20px;
+    margin: 5px;
+
+    border: 2px solid #e6b7c3;
+    border-radius: 20px;
+
+    text-align: center;
+    font-weight: bold;
+
+    box-shadow: 0 3px 8px rgba(80, 50, 60, 0.12);
+
+    transition: 0.3s;
+}
+
+.contenedor-videos a:hover {
+    background-color: #d99aaa;
+    color: white;
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 5px 10px rgba(80, 50, 60, 0.18);
+}
+
+/* ===== DISEÑOS ===== */
+
+.contenedor-disenos {
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+
+    gap: 15px;
+}
+
+.contenedor-disenos a {
+    display: block;
+
+    padding: 18px;
+
+    background-color: #f9e7ec;
+    color: #704b57;
+
+    text-decoration: none;
+
+    border: 1px solid #e6b7c3;
+    border-radius: 15px;
+
+    text-align: center;
+
+    transition: 0.3s;
+}
+
+.contenedor-disenos a:hover {
+    background-color: #d99aaa;
+    color: white;
+
+    transform: translateY(-3px);
+}
+
+/* ===== MATERIALES ===== */
+
+/* Selector descendiente */
+
+#materiales ul li {
+    margin: 10px 0;
+    padding: 8px;
+
+    background-color: #fff5f7;
+
+    border-left: 4px solid #d99aaa;
+
+    border-radius: 8px;
+}
+
+/* ===== PASOS ===== */
+
+/* Selector descendiente */
+
+#pasos ol li {
+    margin: 12px 0;
+    padding: 10px;
+
+    background-color: #fff5f7;
+
+    border-radius: 10px;
+}
+
+/* ===== CUIDADOS ===== */
+
+/* Selector descendiente */
+
+#cuidados ul li {
+    margin: 10px 0;
+    padding: 8px;
+
+    background-color: #fff5f7;
+
+    border-left: 4px solid #d99aaa;
+
+    border-radius: 8px;
+}
+
+/* ===== COMBINACIÓN ID + CLASE ===== */
+
+#cuidados .texto-especial,
+#disenos .texto-especial,
+#tabla-manicuras .texto-especial {
+    font-size: 17px;
+
+    padding: 12px;
+
+    background-color: #fff5f7;
+
+    border-radius: 10px;
+}
+
+/* ===== TABLA ===== */
+
+#tabla-manicuras {
+    overflow-x: auto;
+}
+
+#tabla-manicuras table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    margin-top: 20px;
+}
+
+#tabla-manicuras th,
+#tabla-manicuras td {
+    border: 2px solid #e6b7c3;
+
+    padding: 12px;
+
+    text-align: center;
+}
+
+#tabla-manicuras th {
+    background-color: #d99aaa;
+    color: white;
+}
+
+#tabla-manicuras td {
+    background-color: #fff8fa;
+}
+
+#tabla-manicuras tr:hover td {
+    background-color: #f8e0e7;
+}
+
+/* ===== ARTÍCULOS ===== */
+
+article {
+    scroll-margin-top: 250px;
+    position: relative;
+}
+
+/* ===== BOTONES ===== */
+
+button {
+    font-family: inherit;
+
+    padding: 10px 18px;
+    margin: 5px;
+
+    border: 1px solid transparent;
+
+    border-radius: 15px;
+}
+
+/* ===== CREADORA ===== */
+
+#creadora {
+    text-align: center;
+}
+
+#creadora p {
+    margin: 8px 0;
+}
+
+#fotoCreadora {
+    display: none;
+    margin-top: 20px;
+}
+
+#fotoCreadora img {
+    width: 220px;
+    max-width: 100%;
+
+    border-radius: 20px;
+
+    border: 4px solid #e6b7c3;
+
+    box-shadow: 0 5px 15px rgba(80, 50, 60, 0.2);
+}
+
+/* ===== FOOTER ===== */
+
+footer {
+    background-color: rgba(248, 220, 229, 0.95);
+
+    text-align: center;
+
+    padding: 25px;
+
+    margin-top: 40px;
+
+    border-top: 2px solid #e6b7c3;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+/* ================================================= */
+/* ===== BOOTSTRAP - SEMANA 6 ===================== */
+/* ================================================= */
+
+#tipos .container {
+    width: 100%;
+    max-width: 100%;
+
+    padding: 0;
+}
+
+#tipos .row {
+    row-gap: 20px;
+}
+
+/* ===== TARJETAS BOOTSTRAP ===== */
+
+#tipos .card {
+    height: 100%;
+
+    background-color: #fffafa;
+
+    border: 2px solid #efd0d9;
+
+    border-radius: 18px;
+
+    box-shadow: 0 4px 12px rgba(80, 50, 60, 0.12);
+
+    transition: 0.3s;
+}
+
+#tipos .card:hover {
+    transform: translateY(-4px);
+
+    box-shadow: 0 7px 16px rgba(80, 50, 60, 0.18);
+}
+
+#tipos .card-body {
+    padding: 25px;
+}
+
+#tipos .card-title {
+    color: #a66c7b;
+
+    font-family: 'Georgia', 'Times New Roman', serif;
+
+    font-weight: bold;
+}
+
+#tipos .card-text {
+    color: #4a3f35;
+
+    font-family: 'Georgia', 'Times New Roman', serif;
+}
+
+/* ===== BOTONES DE BOOTSTRAP ===== */
+
+#tipos .btn-primary {
+    background-color: #f3c6d2;
+
+    border-color: #e6b7c3;
+
+    color: #704b57;
+
+    border-radius: 20px;
+
+    font-family: inherit;
+
+    margin: 5px;
+
+    transition: 0.3s;
+}
+
+#tipos .btn-primary:hover {
+    background-color: #e9b3c2;
+
+    border-color: #e6b7c3;
+
+    color: #704b57;
+
+    transform: translateY(-3px);
+}
+
+/* ===== BOTÓN BOOTSTRAP DEL FOOTER ===== */
+
+#creadora .btn-primary {
+    background-color: #f3c6d2;
+
+    border-color: #e6b7c3;
+
+    color: #704b57;
+
+    border-radius: 20px;
+
+    font-family: inherit;
+}
+
+#creadora .btn-primary:hover {
+    background-color: #e9b3c2;
+
+    border-color: #e6b7c3;
+
+    color: #704b57;
+}
+
+/* ===== TEXTO DE BOOTSTRAP ===== */
+
+#tipos .text-center {
+    color: #76545e;
+}
+
+/* ================================================= */
+/* ===== PREGUNTAS FRECUENTES - BOOTSTRAP ========= */
+/* ================================================= */
+
+#preguntas .accordion {
+    margin-top: 25px;
+}
+
+#preguntas .accordion-item {
+    background-color: #fffafa;
+
+    border: 2px solid #e6b7c3;
+
+    margin-bottom: 12px;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    box-shadow: 0 3px 10px rgba(80, 50, 60, 0.10);
+}
+
+#preguntas .accordion-button {
+    background-color: #f3c6d2;
+
+    color: #704b57;
+
+    font-family: 'Georgia', 'Times New Roman', serif;
+
+    font-weight: bold;
+
+    font-size: 16px;
+
+    padding: 16px 20px;
+
+    box-shadow: none;
+}
+
+#preguntas .accordion-button:hover {
+    background-color: #e9b3c2;
+
+    color: #704b57;
+}
+
+#preguntas .accordion-button:not(.collapsed) {
+    background-color: #d99aaa;
+
+    color: white;
+
+    box-shadow: none;
+}
+
+#preguntas .accordion-button:focus {
+    box-shadow: none;
+
+    border-color: #e6b7c3;
+}
+
+#preguntas .accordion-body {
+    background-color: #fff8fa;
+
+    color: #4a3f35;
+
+    padding: 20px;
+
+    font-family: 'Georgia', 'Times New Roman', serif;
+}
+
+#preguntas .accordion-body ul {
+    margin-bottom: 0;
+}
+
+#preguntas .accordion-body li {
+    margin-bottom: 7px;
+}
+
+#preguntas .accordion-body .btn-primary {
+    background-color: #f3c6d2;
+
+    border-color: #e6b7c3;
+
+    color: #704b57;
+
+    border-radius: 20px;
+
+    font-family: inherit;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+#preguntas .accordion-body .btn-primary:hover {
+    background-color: #d99aaa;
+
+    border-color: #d99aaa;
+
+    color: white;
+
+    transform: translateY(-2px);
+}
+
+/* ===== DISEÑO RESPONSIVO ===== */
+
+@media (max-width: 700px) {
+
+    header h1 {
+        font-size: 25px;
+    }
+
+    main {
+        width: 94%;
+        margin: 25px auto;
+    }
+
+    section {
+        padding: 22px;
+        margin-bottom: 25px;
+    }
+
+    /* Botones del menú en celular */
+
+    nav.menu-principal {
+        gap: 6px;
+        padding: 8px 3px;
+    }
+
+    nav.menu-principal a {
+        padding: 7px 10px;
+        font-size: 12px;
+        border-radius: 18px;
+    }
+
+    .buscador input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .tarjeta-manicura,
+    .tarjeta-nueva {
+        padding: 20px;
+    }
+
+    .contenedor-videos,
+    .contenedor-disenos {
+        grid-template-columns: 1fr;
+    }
+
+    #tipos .card-body {
+        padding: 20px;
+    }
+
+    /* ===== PREGUNTAS EN CELULAR ===== */
+
+    #preguntas .accordion-button {
+        font-size: 14px;
+        padding: 14px;
+    }
+
+    #preguntas .accordion-body {
+        padding: 16px;
+    }
+
+}   
